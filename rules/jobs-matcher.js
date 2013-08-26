@@ -45,6 +45,10 @@
 
                             r.skills = _this.localize(r.skills, job.lang, job.profile);
 
+
+                            experience.start = r.start;
+                            experience.end = r.end;
+
                             roles.push(r);
                         }
                     });
@@ -57,7 +61,7 @@
                 });
 
                 // Reverse education
-//                model[_this.key] = _.sortBy(model[_this.key], function(e) { return -e.start; });
+                model[_this.key] = _.sortBy(model[_this.key], function(e) { return -e.end; });
 
                 defer.resolve(model);
             });
