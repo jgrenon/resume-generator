@@ -1,0 +1,239 @@
+{
+    "project": {},
+    "files": {
+        "lib/career.js": {
+            "name": "lib/career.js",
+            "modules": {
+                "career": 1
+            },
+            "classes": {
+                "Career": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "lib/job.js": {
+            "name": "lib/job.js",
+            "modules": {
+                "job": 1
+            },
+            "classes": {
+                "Job": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "lib/layout.js": {
+            "name": "lib/layout.js",
+            "modules": {},
+            "classes": {
+                "Layout": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "lib/renderer.js": {
+            "name": "lib/renderer.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {
+        "career": {
+            "name": "career",
+            "submodules": {},
+            "classes": {
+                "Career": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "lib/career.js",
+            "line": 15
+        },
+        "job": {
+            "name": "job",
+            "submodules": {},
+            "classes": {
+                "Job": 1,
+                "Layout": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "lib/layout.js",
+            "line": 11
+        }
+    },
+    "classes": {
+        "Career": {
+            "name": "Career",
+            "shortname": "Career",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "career",
+            "namespace": "",
+            "file": "lib/career.js",
+            "line": 15,
+            "since": "1.0",
+            "description": "A Career represents the model that describes all facts about someone's career.",
+            "params": [
+                {
+                    "name": "data",
+                    "description": "The model of the career as specified in the RG documentation"
+                }
+            ],
+            "is_constructor": 1
+        },
+        "Job": {
+            "name": "Job",
+            "shortname": "Job",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "job",
+            "namespace": "",
+            "file": "lib/job.js",
+            "line": 13,
+            "since": "1.0",
+            "description": "Represents a job description that will be used when matching experience to create a cutomized resume",
+            "params": [
+                {
+                    "name": "data",
+                    "description": "The model of the job as specified in the RG documentation"
+                }
+            ],
+            "is_constructor": 1
+        },
+        "Layout": {
+            "name": "Layout",
+            "shortname": "Layout",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "job",
+            "namespace": "",
+            "file": "lib/layout.js",
+            "line": 11,
+            "since": "1.0",
+            "description": "Encapsulate layout information that will be used by the renderer to structure the resume",
+            "params": [
+                {
+                    "name": "tmplFn",
+                    "description": "A tmpl function that will be called with the resume model to produce the rendered template"
+                }
+            ],
+            "is_constructor": 1
+        }
+    },
+    "classitems": [
+        {
+            "file": "lib/career.js",
+            "line": 26,
+            "description": "Factory method that construct a {Career} instance from the provided source.",
+            "itemtype": "method",
+            "name": "load",
+            "static": 1,
+            "access": "public",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "source",
+                    "description": "The path to a Yaml file or 'stdin' to receive model through the standard input"
+                }
+            ],
+            "return": {
+                "description": "A new Career instance",
+                "type": "Career"
+            },
+            "class": "Career",
+            "module": "career"
+        },
+        {
+            "file": "lib/job.js",
+            "line": 24,
+            "description": "Factory method to load a job model from a Yaml source file.",
+            "access": "public",
+            "tagname": "",
+            "itemtype": "method",
+            "name": "load",
+            "static": 1,
+            "params": [
+                {
+                    "name": "source",
+                    "description": "The path of a Yaml file containing the job model"
+                }
+            ],
+            "return": {
+                "description": "A new Job instance",
+                "type": "Job"
+            },
+            "class": "Job",
+            "module": "job"
+        },
+        {
+            "file": "lib/layout.js",
+            "line": 22,
+            "description": "Factory method to load a layout from a Jade source file.",
+            "access": "public",
+            "tagname": "",
+            "itemtype": "method",
+            "name": "load",
+            "static": 1,
+            "params": [
+                {
+                    "name": "source",
+                    "description": "The path of a jade template"
+                }
+            ],
+            "return": {
+                "description": "A new Layout instance",
+                "type": "Job"
+            },
+            "class": "Layout",
+            "module": "job"
+        },
+        {
+            "file": "lib/renderer.js",
+            "line": 34,
+            "description": "Factory method",
+            "return": {
+                "description": "",
+                "type": "Renderer"
+            },
+            "class": "",
+            "module": "job"
+        }
+    ],
+    "warnings": [
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " lib/career.js:26"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " lib/job.js:24"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " lib/layout.js:22"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " lib/renderer.js:34"
+        },
+        {
+            "message": "Missing item type\nFactory method",
+            "line": " lib/renderer.js:34"
+        }
+    ]
+}

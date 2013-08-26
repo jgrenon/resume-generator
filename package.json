@@ -1,0 +1,21 @@
+{
+  "name": "resume-generator",
+  "version": "0.1.0",
+  "author": "Joel Grenon <jgrenon@vibes.io>",
+  "license": "Apache V2",
+  "dependencies": {
+    "underscore": "~1.4.4",
+    "moment": "~2.0.0",
+    "shortid": "~1.0.9",
+    "q": "~0.9.6",
+    "js-yaml": "~2.1.0",
+    "optimist": "~0.6.0",
+    "async": "~0.2.9",
+    "jade": "~0.35.0",
+    "underscore.string": "~2.3.3",
+    "underscore-query": "~0.3.0"
+  },
+  "bin": {
+    "rg": "./index.js"
+  }
+}

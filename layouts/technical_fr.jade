@@ -1,0 +1,61 @@
+doctype 5
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    link(href='http://fonts.googleapis.com/css?family=Roboto:400,700', rel='stylesheet', type='text/css')
+    style.
+      body { font-family: 'Roboto', sans-serif; padding-left:50px; padding-right: 50px; }
+      #header {
+        text-align: center;
+      }
+      #header h1 { font-size:20px;font-weight: bold;  }
+      #header .meta { margin-top:-10px; padding:0; font-size:14px; }
+      .bio { margin-top: 10px; margin-bottom: 25px; font-style: italic; text-align:center }
+      .job-title { text-align: center; }
+      .inline { padding:0, margin:0 }
+      .inline li { display:inline }
+      .inline li:after { content:", "; }
+      .inline li:last-child:after { content: "" }
+      .skillset { margin: 0; padding:0; margin-top:-20px; }
+      .skillset li { font-size:14px; font-style:italic; }
+
+  body
+    #header
+      h1 #{perso.firstName} #{perso.lastName}
+      p.meta
+        b #{perso.emails.perso}
+        span , #{perso.phones.mobile}
+      p.meta #{perso.address.street}, #{perso.address.city}, #{perso.address.country}, #{perso.address.postalCode}
+      p.meta Language Maternelle: <strong>#{perso.native_language}</strong>, Parlée(s): <strong>#{perso.spoken_languages}</strong>, Écrite(s): <strong>#{perso.written_languages}</strong>
+      h2.job-title #{job.title}
+      p.bio #{bio}
+      hr
+    #highlights
+      h1 Survol
+      ul
+        each h in highlights
+          li #{h}
+      hr
+    #jobs.section
+      h1 Historique Professionel
+      each job in jobs
+        each role in job.roles
+          h2 #{role.title}, #{job.company.name} - #{role.start} à #{role.end}
+          .skillset
+            ul.inline
+              each s in role.skills
+                li #{s}
+          ul
+            each d in role.description
+              li #{d}
+    #education.section
+      h1 Éducation
+      ul
+        each education in educations
+          li #{education.certificate}, #{education.end_year}, #{education.school}, #{education.city}
+    #interests.section
+      h1 Interêts
+      ul.inline
+        each i in interests
+          li #{i}
+
