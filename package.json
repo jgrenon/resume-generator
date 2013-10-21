@@ -1,7 +1,7 @@
 {
   "name": "resume-generator",
-  "version": "0.1.0",
-  "author": "Joel Grenon <jgrenon@vibes.io>",
+  "version": "0.2.0",
+  "author": "Joel Grenon <joelgrenon@gmail.com>",
   "license": "Apache V2",
   "dependencies": {
     "underscore": "~1.4.4",
